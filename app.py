@@ -42,22 +42,22 @@ def chat_with_csv(df, prompt):
         "Content-Type": "application/json"
     }
     
-    # Limit the data to the first 50 rows and all columns
-    limited_df = df.head(50)
+    # Limit the data to the first 100 rows and all columns
+    limited_df = df.head(200)
     df_str = limited_df.to_string()
     
     # Prepare a summary of the data
     summary = f"This dataset has {df.shape[0]} rows and {df.shape[1]} columns. "
     summary += f"Columns: {', '.join(df.columns)}. "
-    summary += "Here's a sample of the data (first 50 rows):\n\n"
+    summary += "Here's a sample of the data (first 200 rows):\n\n"
     # Prepare the payload for the API request
     data = {
-        "model": "mixtral-8x7b-32768",
+        "model": "llama-3.1-70b-versatile",
         "messages": [
             {"role": "system", "content": "You are a helpful assistant analyzing CSV data. Use the provided data sample and summary to answer questions as accurately as possible. If the answer cannot be definitively found in the sample, say so and provide the best possible answer based on the available information."},
             {"role": "user", "content": f"{summary}{df_str}\n\nQuestion: {prompt}"}
         ],
-        "max_tokens": 2048
+        "max_tokens": 1024
     }
 
     try:
