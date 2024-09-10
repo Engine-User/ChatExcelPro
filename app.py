@@ -99,7 +99,7 @@ st.markdown("<h1 style='color: green;'>ChatExcel Pro: LLM powered Excel Analytic
 
 st.markdown("<h3 style='color: green;'>Chat with your Excel sheets and visualize data!</h3>", unsafe_allow_html=True)
 
-st.markdown("<h6 style='color: red;'>From Engineer</h6>", unsafe_allow_html=True)
+st.markdown("<h6 style='color: red;'>From Sad_Engineer</h6>", unsafe_allow_html=True)
 # File upload
 uploaded_file = st.file_uploader("Choose a file", type=["csv", "xlsx"])
 
