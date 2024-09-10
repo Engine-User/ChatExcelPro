@@ -57,7 +57,7 @@ def chat_with_csv(df, prompt):
             {"role": "system", "content": "You are a helpful assistant analyzing CSV data. Use the provided data sample and summary to answer questions as accurately as possible. If the answer cannot be definitively found in the sample, say so and provide the best possible answer based on the available information."},
             {"role": "user", "content": f"{summary}{df_str}\n\nQuestion: {prompt}"}
         ],
-        "max_tokens": 1024
+        "max_tokens": 2048
     }
 
     try:
