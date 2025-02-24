@@ -52,7 +52,7 @@ def chat_with_csv(df, prompt):
     summary += "Here's a sample of the data (first 200 rows):\n\n"
     # Prepare the payload for the API request
     data = {
-        "model": "llama-3.1-70b-versatile",
+        "model": "llama-3.3-70b-versatile",
         "messages": [
             {"role": "system", "content": "You are a helpful assistant analyzing CSV data. Use the provided data sample and summary to answer questions as accurately as possible. If the answer cannot be definitively found in the sample, say so and provide the best possible answer based on the available information."},
             {"role": "user", "content": f"{summary}{df_str}\n\nQuestion: {prompt}"}
